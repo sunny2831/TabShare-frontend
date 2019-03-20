@@ -1,13 +1,13 @@
 .web-page-box {
-  width: 1440px;
-  height: 900px;
+  /* width: 1440px;
+  height: 900px; */
   display: flex;
   background: #DDE6E7;
 }
 
 .nav-bar-box {
-  width: 1440px;
-  height: 88px;
+  width: 2880px;
+  height: 80px;
   display: flex;
   background: #2C77A1;
   justify-content: space-between;
@@ -17,18 +17,18 @@
 
 .tab-share-logo {
   position: absolute;
-  width: 408.24px;
-  height: 64.77px;
-  left: 28px;
-  top: 10px;
+  width: 375px;
+  height: 50px;
+  left: 30px;
+  top: 15px;
 }
 
 .login-btn {
   position: absolute;
   width: 104px;
   height: 44px;
-  left: 1260px;
-  top: 22px;
+  left: 1262px;
+  top: 18px;
   font-style: tahoma;
   font-size: 22px;
   font-weight: bold;
@@ -154,4 +154,105 @@
   left: 30px;
   top: 288px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.login-field{
+  position: absolute;
+  width: 492.21px;
+  height: 319px;
+  left: 470px;
+  top: 279px;
+
+  background: #999594;
+  border: 2.88688px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 38.9729px;
+}
+
+.login-field-btn {
+  position: absolute;
+  width: 202.08px;
+  height: 63.51px;
+  left: 610.01px;
+  top: 481.08px;
+  background: #B03852;
+  box-shadow: 0px 6.92851px 6.92851px rgba(0, 0, 0, 0.25);
+  border: 0px solid #B03852;
+  border-radius: 21.6516px;
+
+  position: absolute;
+  width: 123.35px;
+  height: 43.07px;
+  left: 649px;
+  top: 492px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26.5477px;
+  line-height: normal;
+  text-align: center;
+
+  color: #DDE6E7;
+}
+
+.username-field {
+  position: absolute;
+  width: 364.46px;
+  height: 39.34px;
+  left: 520.52px;
+  top: 323.75px;
+
+  background: #DDE6E7;
+  border: 4.33032px solid #2C77A1;
+  box-shadow: 0px 5.77376px 5.77376px rgba(0, 0, 0, 0.25);
+  border-radius: 14.4344px;
+
+  position: absolute;
+  width: 364.46px;
+  height: 39.34px;
+  left: 531.83px;
+  top: 327.22px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26.9442px;
+  line-height: normal;
+
+  color: #A49F9F;
+
+}
+
+.password-field {
+  position: absolute;
+  width: 364.46px;
+  height: 39.34px;
+  left: 520.52px;
+  top: 399.41px;
+
+  background: #DDE6E7;
+  border: 4.33032px solid #2C77A1;
+  box-shadow: 0px 5.77376px 5.77376px rgba(0, 0, 0, 0.25);
+  border-radius: 14.4344px;
+
+  position: absolute;
+  width: 364.46px;
+  height: 39.34px;
+  left: 534.72px;
+  top: 402.01px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26.9442px;
+  line-height: normal;
+
+  color: #A49F9F;
+}
+
+.login-bg {
+  position: relative;
+  width: 1440px;
+  height: 900px;
 }
