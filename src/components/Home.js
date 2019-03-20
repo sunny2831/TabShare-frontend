@@ -7,7 +7,7 @@ import CoinBackground from '../images/CoinBackground.png'
 import DemoPage from '../images/DemoPage.png'
 // import Link from 'react-router'
 
-const Button = () => (
+const LoginBtnClick = () => (
   <Route render={({ history}) => (
     <button className='login-btn' type="button" onClick={() => { history.push('/log-in') }}>Log in</button>
   )} />
@@ -22,7 +22,7 @@ const Home = props => {
       <main className='web-page-box'>
         <div className='nav-bar-box'>
             <img className="tab-share-logo" alt="main-logo" src={TabShareLogo} />
-            <Button />
+            <LoginBtnClick />
         </div>
         <img className="homepage-intro" alt="main-intro" src={HomePageIntro} />
         <img className="coin-bg" alt="coin-bg" src={CoinBackground} />

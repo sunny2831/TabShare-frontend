@@ -17,7 +17,8 @@ class App extends Component {
     state = {
       currentUser: {},
       owed_by_tabs: [],
-      owed_to_tabs: []
+      owed_to_tabs: [],
+      payment: []
     }
 
 

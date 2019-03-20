@@ -1,7 +1,14 @@
 import React from 'react';
 import Home from './Home'
 import LoginBackground from '../images/LoginBackground.png'
+import { Route } from 'react-router-dom';
 
+
+const BgImgClick = () => (
+  <Route render={({ history}) => (
+    <img className='login-bg' alt="login-bg-page" src={LoginBackground} onClick={() => { history.push('/') }}></img>
+  )} />
+)
 
 class LoginForm extends React.Component {
 
@@ -10,15 +17,10 @@ class LoginForm extends React.Component {
     password: ""
   }
 
-  handleClick = (e) => {
-    console.log(e)
-  }
-
-
   render() {
     return (
       <main>
-        <img className="login-bg" alt="login-bg-page" src={LoginBackground}></img>
+        <BgImgClick/>
         <div className="login-field">
         </div>
         <form >
