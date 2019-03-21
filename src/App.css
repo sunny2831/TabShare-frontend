@@ -1,6 +1,6 @@
 .web-page-box {
-  /* width: 1440px;
-  height: 900px; */
+  width: 1440px;
+  height: 900px;
   display: flex;
   background: #DDE6E7;
 }
@@ -30,7 +30,7 @@
   left: 1262px;
   top: 18px;
   font-style: tahoma;
-  font-size: 22px;
+  font-size: 25px;
   font-weight: bold;
   color: #2C77A1;
   background: #DDE6E7;
@@ -59,7 +59,7 @@
   font-weight: bold;
   font-size: 18.6667px;
   line-height: normal;
-  color: #A49F9F;
+  color: #000;
 
   background: #DDE6E7;
   border: 3px solid #2C77A1;
@@ -79,7 +79,7 @@
   font-weight: bold;
   font-size: 18.6667px;
   line-height: normal;
-  color: #A49F9F;
+  color: #000;
 
   background: #DDE6E7;
   border: 3px solid #2C77A1;
@@ -99,7 +99,7 @@
   font-weight: bold;
   font-size: 18.6667px;
   line-height: normal;
-  color: #A49F9F;
+  color: #000;
 
   background: #DDE6E7;
   border: 3px solid #2C77A1;
@@ -200,7 +200,7 @@
   position: absolute;
   width: 364.46px;
   height: 39.34px;
-  left: 520.52px;
+  left: 530.52px;
   top: 323.75px;
 
   background: #DDE6E7;
@@ -211,7 +211,7 @@
   position: absolute;
   width: 364.46px;
   height: 39.34px;
-  left: 531.83px;
+  left: 530.52px;
   top: 327.22px;
 
   font-family: Tahoma;
@@ -220,7 +220,7 @@
   font-size: 26.9442px;
   line-height: normal;
 
-  color: #A49F9F;
+  color: #000;
 
 }
 
@@ -228,7 +228,7 @@
   position: absolute;
   width: 364.46px;
   height: 39.34px;
-  left: 520.52px;
+  left: 530.52px;
   top: 399.41px;
 
   background: #DDE6E7;
@@ -239,7 +239,7 @@
   position: absolute;
   width: 364.46px;
   height: 39.34px;
-  left: 534.72px;
+  left: 530.52px;
   top: 402.01px;
 
   font-family: Tahoma;
@@ -248,11 +248,26 @@
   font-size: 26.9442px;
   line-height: normal;
 
-  color: #A49F9F;
+  color: #000;
 }
 
 .login-bg {
   position: relative;
   width: 1440px;
   height: 900px;
+}
+
+.logout-btn {
+  position: absolute;
+  width: 104px;
+  height: 44px;
+  left: 1262px;
+  top: 18px;
+  font-style: tahoma;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2C77A1;
+  background: #DDE6E7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 15px;
 }
