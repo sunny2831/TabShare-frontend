@@ -271,3 +271,235 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
 }
+
+.dash-panel {
+  position: absolute;
+  width: 681px;
+  height: 815px;
+  left: 390px;
+  top: 80px;
+
+  background: #DDE6E7;
+  border: 1.62725px solid #A49F9F;
+  box-sizing: border-box;
+  box-shadow: 0px 6.50902px 6.50902px rgba(0, 0, 0, 0.25);
+}
+
+.dark-panel {
+  position: absolute;
+  width: 680px;
+  height: 166px;
+  left: -1px;
+  top: 0px;
+  background: #999594;
+}
+
+.hoz-line {
+
+position: absolute;
+width: 682px;
+height: 2px;
+left: 0px;
+top: 80px;
+
+background: #C4C4C4;
+}
+
+.vert-line1 {
+
+position: absolute;
+width: 70.14px;
+height: 2px;
+left: 410px;
+top: 125px;
+
+background: #C4C4C4;
+transform: rotate(90deg);
+}
+
+.vert-line2 {
+
+position: absolute;
+width: 70.14px;
+height: 2px;
+left: 190px;
+top: 125px;
+
+background: #C4C4C4;
+transform: rotate(90deg);
+}
+
+.title {
+  position: absolute;
+  width: 208.55px;
+  height: 48px;
+  left: 12px;
+  top: -8px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36.4138px;
+  line-height: normal;
+
+  color: #000000;
+}
+
+.add-tab-btn {
+position: absolute;
+width: 176.33px;
+height: 46px;
+right: 235px;
+bottom: 105px;
+
+background: #B03852;
+border: 0px solid #B03852;
+box-shadow: 0px 3.76687px 3.76687px rgba(0, 0, 0, 0.25);
+border-radius: 14.1257px;
+
+font-family: Tahoma;
+font-style: normal;
+font-weight: bold;
+font-size: 23.5857px;
+line-height: normal;
+text-align: center;
+
+color: #DDE6E7;
+}
+
+.settle-up-btn {
+  position: absolute;
+  width: 165.33px;
+  height: 46px;
+  right: 35px;
+  bottom: 105px;
+
+  background: #2C77A1;
+  border: 0px solid #B03852;
+  box-shadow: 0px 3.76687px 3.76687px rgba(0, 0, 0, 0.25);
+  border-radius: 14.1257px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23.5857px;
+  line-height: normal;
+  text-align: center;
+
+  color: #DDE6E7;
+}
+
+.total-balance {
+
+position: absolute;
+width: 145px;
+height: 26px;
+left: 40px;
+top: 70px;
+
+font-family: Tahoma;
+font-style: normal;
+font-weight: bold;
+font-size: 20.7587px;
+line-height: normal;
+text-align: center;
+
+color: #C4C4C4;
+}
+
+.you-owe {
+  position: absolute;
+  width: 130px;
+  height: 26px;
+  left: 265px;
+  top: 70px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20.7587px;
+  line-height: normal;
+  text-align: center;
+
+  color: #C4C4C4;
+}
+
+.you-are-owed {
+  position: absolute;
+  width: 180px;
+  height: 26px;
+  left: 480px;
+  top: 70px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20.7587px;
+  line-height: normal;
+  text-align: center;
+
+  color: #C4C4C4;
+}
+
+.owing-divide{
+  position: absolute;
+  width: 180px;
+  height: 26px;
+  left: 15px;
+  top: 150px;
+  font-size: 30px;
+  color: #8F8C8B;
+}
+
+.owed-divide{
+  position: absolute;
+  width: 240px;
+  height: 26px;
+  left: 440px;
+  top: 150px;
+  font-size: 30px;
+  color: #8F8C8B;
+}
+
+.divide-rectangle{
+  position: absolute;
+  width: 432.14px;
+  height: 3px;
+  left: 118px;
+  top: 400.83px;
+
+  background: #C4C4C4;
+  transform: rotate(90deg);
+}
+
+.dash-selector{
+
+position: absolute;
+width: 211.89px;
+height: 46.89px;
+left: 175px;
+top: 72.5px;
+
+font-family: Tahoma;
+font-style: normal;
+font-weight: normal;
+font-size: 38.2105px;
+line-height: normal;
+
+color: #2C77A1;
+}
+
+.login-welcome {
+  position: absolute;
+  width: 208.55px;
+  height: 48px;
+  left: 1100px;
+  top: 80px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36.4138px;
+  line-height: normal;
+
+  color: #000000;}

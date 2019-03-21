@@ -3,7 +3,8 @@ import { Route } from 'react-router-dom';
 import API from '../API'
 import '../App.css';
 import TabShareLogo from '../images/TabShareLogo.png'
-
+import MidSection from './MidSection'
+import SideBar from './SideBar'
 
 
 
@@ -22,13 +23,21 @@ class Dashboard extends React.Component {
   }
 
   render() {
+      const { currentUser } = this.props;
+
+
     return(
-      <main className='web-page-box'>
-        <div className='nav-bar-box'>
+      <div {...this.props}>
+        <main className='web-page-box' {...this.props}>
+          <div className='nav-bar-box'>
             <img className="tab-share-logo" alt="main-logo" src={TabShareLogo} />
             <button className='logout-btn' type="button" onClick={this.handleLogout}>Log out</button>
-        </div>
-      </main>
+          </div>
+          <h1 className="login-welcome">Welcome {this.props.value} !</h1>
+          <MidSection />
+          <SideBar />
+        </main>
+      </div>
     )
   }
 
