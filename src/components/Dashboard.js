@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
-      const { currentUser } = this.props;
+      const { currentUser, owedByTabs, owedToTabs } = this.props;
 
     return(
       <div >
@@ -36,7 +36,7 @@ class Dashboard extends React.Component {
             <button className='logout-btn' type="button" onClick={this.handleLogout}>Log out</button>
           </div>
           <h1 className="login-welcome">Welcome {currentUser.username} !</h1>
-          <MidSection />
+          <MidSection owedByTabs={owedByTabs} owedToTabs={owedToTabs} currentUser={currentUser} />
           <SideBar dashIcon={this.dashIcon.imgurl} />
         </main>
       </div>

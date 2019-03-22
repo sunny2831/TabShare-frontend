@@ -85,6 +85,8 @@ class App extends Component {
       })
     }
 
+
+
     // getOwedToTabs = () => {
     //   fetch(`http://localhost:3000/owed_to_tabs`, {
     //     method: 'GET',
@@ -105,7 +107,8 @@ class App extends Component {
                 <LoginForm login={this.login} {...routerProps} />
               )}/>
             <Route exact path="/dashboard" component={routerProps => (
-                <Dashboard logout={this.logout} currentUser={this.state.currentUser}{...routerProps} />
+                <Dashboard logout={this.logout} currentUser={this.state.currentUser}
+                   owedToTabs={this.state.owed_to_tabs} owedByTabs={this.state.owed_by_tabs} {...routerProps} />
               )}/>
         </div>
       );
