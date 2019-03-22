@@ -53,7 +53,7 @@ class App extends Component {
       return (
         <div className="App">
               <Route exact path="/" component= {routerProps => (
-                  <Home {...routerProps}/> 
+                  <Home login={this.login}{...routerProps}/> 
                 )} />
               <Route exact path="/log-in" component={routerProps => (
                 <LoginForm login={this.login} {...routerProps} />

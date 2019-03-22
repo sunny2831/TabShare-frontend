@@ -5,11 +5,14 @@ import '../App.css';
 import TabShareLogo from '../images/TabShareLogo.png'
 import MidSection from './MidSection'
 import SideBar from './SideBar'
-
+import ProjectIcon from '../images/ProjectIcon.png'
 
 
 class Dashboard extends React.Component {
 
+  dashIcon = {
+    imgurl: ProjectIcon
+  }
  // LogoutBtnClick = () => (
  //    <Route render={({ history}) => (
  //      <button className='logout-btn' type="button" onClick={() => this.handleLogout}>Log out</button>
@@ -25,17 +28,16 @@ class Dashboard extends React.Component {
   render() {
       const { currentUser } = this.props;
 
-
     return(
-      <div {...this.props}>
-        <main className='web-page-box' {...this.props}>
+      <div >
+        <main className='web-page-box'>
           <div className='nav-bar-box'>
             <img className="tab-share-logo" alt="main-logo" src={TabShareLogo} />
             <button className='logout-btn' type="button" onClick={this.handleLogout}>Log out</button>
           </div>
-          <h1 className="login-welcome">Welcome {this.props.value} !</h1>
+          <h1 className="login-welcome">Welcome {currentUser} !</h1>
           <MidSection />
-          <SideBar />
+          <SideBar dashIcon={this.dashIcon.imgurl} />
         </main>
       </div>
     )
