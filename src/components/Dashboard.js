@@ -35,7 +35,7 @@ class Dashboard extends React.Component {
             <img className="tab-share-logo" alt="main-logo" src={TabShareLogo} />
             <button className='logout-btn' type="button" onClick={this.handleLogout}>Log out</button>
           </div>
-          <h1 className="login-welcome">Welcome {currentUser} !</h1>
+          <h1 className="login-welcome">Welcome {currentUser.username} !</h1>
           <MidSection />
           <SideBar dashIcon={this.dashIcon.imgurl} />
         </main>

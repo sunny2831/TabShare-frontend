@@ -23,12 +23,12 @@ class API {
     return this.get("http://localhost:3000/validate");
   }
 
-  static get_owed_by_tabs() {
-    return this.get("http://localhost:3000/owed_by_tabs");
+  static get_owed_by_tabs(user) {
+    return this.get(`http://localhost:3000/owed_by_tabs`);
   }
 
-  static get_owed_to_tabs() {
-    return this.get("http://localhost:3000/owed_to_tabs");
+  static get_owed_to_tabs(user) {
+    return this.get(`http://localhost:3000/owed_to_tabs`);
   }
 
   static get(url) {
