@@ -10,6 +10,11 @@ import ProjectIcon from '../images/ProjectIcon.png'
 
 class Dashboard extends React.Component {
 
+  state = {
+    usersOweYou: [],
+    youOweUsers: []
+  }
+
   dashIcon = {
     imgurl: ProjectIcon
   }
@@ -19,6 +24,7 @@ class Dashboard extends React.Component {
  //    )} />
  //  )
 
+
   handleLogout = () => {
     const { currentUser, logout } = this.props;
     logout(currentUser)
@@ -26,7 +32,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
-      const { currentUser, owedByTabs, owedToTabs } = this.props;
+      const { currentUser } = this.props;
 
     return(
       <div >
@@ -36,7 +42,7 @@ class Dashboard extends React.Component {
             <button className='logout-btn' type="button" onClick={this.handleLogout}>Log out</button>
           </div>
           <h1 className="login-welcome">Welcome {currentUser.username} !</h1>
-          <MidSection owedByTabs={owedByTabs} owedToTabs={owedToTabs} currentUser={currentUser} />
+          <MidSection getOtherUsers={this.getOtherUsers} currentUser={currentUser} />
           <SideBar dashIcon={this.dashIcon.imgurl} />
         </main>
       </div>
