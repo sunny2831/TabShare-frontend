@@ -24,9 +24,7 @@ class App extends Component {
         currentUser: {},
         owed_by_tabs: [],
         owed_to_tabs: [],
-        payment: [],
-        usersOweYou: [],
-        youOweUsers: []
+        payment: []
       }
   }
 
@@ -72,9 +70,7 @@ class App extends Component {
       .then(response => response.json())
       .then(tabs => {
         this.setState({owed_to_tabs: tabs})
-        // this.getOwedByUser()
       })
-
     }
 
 
@@ -89,7 +85,6 @@ class App extends Component {
       .then(response => response.json())
       .then(tabs => {
         this.setState({owed_by_tabs: tabs})
-        // this.getOwedToUser()
       })
     }
 
@@ -104,57 +99,6 @@ class App extends Component {
     //       this.getOwedToUser()
     //   }
     // }
-
-    getOwedToUser = () => {
-      let owedToIds = this.state.owed_by_tabs.map(tab => tab.owed_to_user_id)
-      let users = []
-
-      fetch('http://localhost:3000/users', {
-        method: 'GET',
-        headers: {'Content-Type': "application.json"}
-      }).then(resp => resp.json()).then(
-        data => users.push(data)
-      )
-
-      let usersOweYou = users.flat()
-      let matchedUser = []
-
-        owedToIds.forEach((id) => {
-        let match
-
-        match = usersOweYou.find(user => user.id === id)
-        matchedUser.push(match) })
-        this.setState({
-          usersOweYou: matchedUser
-        })
-    }
-
-    getOwedByUser = () => {
-      // const { owedByTabs, owedToTabs } = this.props
-      let users = []
-      let owedByIds = this.state.owed_to_tabs.map(tab => tab.owed_by_user_id)
-
-      fetch('http://localhost:3000/users', {
-        method: 'GET',
-        headers: {'Content-Type': "application.json"}
-      }).then(resp => resp.json()).then(
-        data => users.push(data)
-      )
-
-      let youOweUsers = users.flat()
-      let matchedUser = []
-
-        owedByIds.forEach((id) => {
-        let match
-        match = youOweUsers.find(user => user.id === id)
-        matchedUser.push(match) })
-
-        this.setState({
-          youOweUsers: matchedUser
-        })
-    }
-
-
 
     // getOwedToTabs = () => {
     //   fetch(`http://localhost:3000/owed_to_tabs`, {

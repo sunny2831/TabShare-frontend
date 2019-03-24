@@ -524,3 +524,90 @@ color: #2C77A1;
   background: #2C77A1;
   border-radius: 5px;
 }
+
+.expense-icon {
+  position: absolute;
+  width: 42.43px;
+  height: 42.43px;
+  left: 115px;
+  top: 178.43px;
+}
+
+.exp-selector{
+
+position: absolute;
+width: 211.89px;
+height: 46.89px;
+left: 175px;
+top: 150px;
+
+font-family: Tahoma;
+font-style: normal;
+font-weight: normal;
+font-size: 35px;
+line-height: normal;
+
+color: #8F8C8B;
+}
+
+.add-friend-bar {
+  position: absolute;
+  width: 290px;
+  height: 40.96px;
+  left: 70px;
+  top: 260px;
+
+  background: #8F8C8B;
+  border: 1.40594px solid #999594;
+  box-sizing: border-box;
+  box-shadow: 0px 7.02504px 7.02504px rgba(0, 0, 0, 0.25);
+  border-radius: 12.2938px;
+}
+
+.friends {
+  position: absolute;
+width: 115.48px;
+height: 22.12px;
+left: 85px;
+top: 238px;
+
+font-family: Tahoma;
+font-style: normal;
+font-weight: normal;
+font-size: 26.6518px;
+line-height: normal;
+
+color: #C4C4C4;
+}
+
+.add {
+  position: absolute;
+  width: 68.15px;
+  height: 27.92px;
+  left: 280px;
+  top: 238px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26.6518px;
+  line-height: normal;
+
+  color: #C4C4C4;
+}
+
+.friendName {
+  position: absolute;
+  width: 162.61px;
+  height: 22.87px;
+  left: 74.38px;
+  top: 340.88px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19.5478px;
+  line-height: normal;
+
+  color: #000000;
+}
