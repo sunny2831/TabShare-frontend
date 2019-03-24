@@ -455,9 +455,9 @@ color: #C4C4C4;
 
 .owed-divide{
   position: absolute;
-  width: 240px;
+  width: 280px;
   height: 26px;
-  left: 440px;
+  left: 425px;
   top: 150px;
   font-size: 30px;
   color: #8F8C8B;
@@ -610,4 +610,44 @@ color: #C4C4C4;
   line-height: normal;
 
   color: #000000;
+}
+
+.you-owe-list {
+  position: absolute;
+  justify-content: space-between;
+
+  padding: 10px;
+  width: 132px;
+  height: 25px;
+  left: 100px;
+  top: 200px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21.1728px;
+  line-height: normal;
+
+  color: #000000;
+}
+
+.you-owe-list-div {
+  line-height: 18px;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.user-icon{
+  border: 1px solid rgb(204,	204,	204	);
+  border-radius: 1000px;
+  height: 30px;
+  width: auto;
+}
+
+.you-owe-info {
+  margin-left: 10px;
+}
+
+.you-owe-list-name {
+  font-size: 16px;
 }

@@ -2,7 +2,7 @@
 import React from 'react';
 import { withRouter, Route } from 'react-router-dom';
 import API from "../API"
-
+import UserIcon from '../images/UserIcon.png'
 
 
 class MidSection extends React.Component {
@@ -70,46 +70,6 @@ class MidSection extends React.Component {
       })
   }
 
-
-  // getOwedToUser = () => {
-  //   const { owedByTabs, owedToTabs } = this.props
-  //   let users = []
-  //   let owedToIds = owedByTabs.map(tab => tab.owed_to_user)
-  //   fetch('http://localhost:3000/users', {
-  //     method: 'GET',
-  //     headers: {'Content-Type': "application.json"}
-  //   }).then(resp => resp.json()).then(
-  //     data => users.push(data)
-  //   )
-  //   let usersOweYou = users.flat()
-  //   let matchedUser = []
-  //     owedToIds.forEach((id) => {
-  //     let match
-  //     match = usersOweYou.find(user => user.id === id)
-  //     matchedUser.push(match) })
-  //   return matchedUser.flat()
-  // }
-  //
-  // getOwedByUser = () => {
-  //   const { owedByTabs, owedToTabs } = this.props
-  //   let users = []
-  //   let owedByIds = owedToTabs.map(tab => tab.owed_by_user)
-  //   fetch('http://localhost:3000/users', {
-  //     method: 'GET',
-  //     headers: {'Content-Type': "application.json"}
-  //   }).then(resp => resp.json()).then(
-  //     data => users.push(data)
-  //   )
-  //   let youOweUsers = users.flat()
-  //   let matchedUser = []
-  //     owedByIds.forEach((id) => {
-  //     let match
-  //     match = youOweUsers.find(user => user.id === id)
-  //     matchedUser.push(match) })
-  //   return matchedUser.flat()
-  // }
-
-
    render() {
      const { currentUser, youOweUsers, usersOweYou, owedByTabs, owedToTabs} = this.props
 
@@ -125,11 +85,19 @@ class MidSection extends React.Component {
           <h2 className="total-balance">total balance</h2>
           <h2 className="you-owe">you owe</h2>
           <h2 className="you-are-owed">you are owed</h2>
-          <div>
             <h3 className="owing-divide">YOU OWE</h3>
-            <p></p>
+          <div className="you-owe-list">
+            {this.state.usersYouOwe.map(user => (
+               <button>
+                 <div className='you-owe-list-div'>
+                   <img className="user-icon" src={UserIcon}></img>
+                   <div className="you-owe-info">
+                     <div className="you-owe-list-name">{user.username}</div>
+                   </div>
+                 </div>
+               </button>
+             ))}
           </div>
-
           <h3 className="owed-divide">YOU ARE OWED</h3>
           <area className="divide-rectangle"></area>
 
