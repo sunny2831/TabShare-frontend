@@ -1,0 +1,197 @@
+.settle-backdrop {
+  position: absolute;
+  width: 1440px;
+  height: 900px;
+  left: -390px;
+  top: -85px;
+  z-index: 1002;
+  background: rgba(196, 196, 196, 0.75);
+}
+
+.settle-box {
+  position: absolute;
+  width: 415px;
+  height: 465px;
+  left: 512px;
+  top: 212px;
+
+  background: #2C77A1;
+  border: 4px solid #B03852;
+  box-sizing: border-box;
+  border-radius: 37.508px;
+}
+
+.settle-header {
+  position: absolute;
+  width: 412px;
+  height: 76px;
+  left: -2px;
+  top: -8px;
+
+  background: #C4C4C4;
+  border: 4px solid #B03852;
+  box-sizing: border-box;
+  border-radius: 38px;
+
+}
+
+.settle-up {
+
+  position: absolute;
+  width: 205px;
+  height: 63px;
+  left: 100px;
+  top: -18px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+  text-align: center;
+
+  color: #B03852
+}
+
+.from-username {
+  position: absolute;
+  width: 265px;
+  height: 35px;
+  left: 63px;
+  top: 115px;
+
+  background: #DDE6E7;
+  border: 3.75794px solid #B03852;
+  box-shadow: 0px 3.67726px 3.67726px rgba(0, 0, 0, 0.25);
+  border-radius: 9.19314px;
+
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17.1605px;
+  line-height: normal;
+}
+
+.paid-label {
+  position: absolute;
+  width: 92px;
+  height: 48px;
+  left: 145px;
+  top: 165px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: normal;
+  text-align: center;
+
+  color: #000000;
+}
+
+.to-username {
+  position: absolute;
+  width: 265px;
+  height: 35px;
+  left: 63px;
+  top: 215px;
+
+  background: #DDE6E7;
+  border: 3.75794px solid #B03852;
+  box-shadow: 0px 3.67726px 3.67726px rgba(0, 0, 0, 0.25);
+  border-radius: 9.19314px;
+
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17.1605px;
+  line-height: normal;
+
+}
+
+.sterling-sign {
+  position: absolute;
+  width: 39px;
+  height: 48.75px;
+  left: 85px;
+  top: 305px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48.75px;
+  line-height: normal;
+  text-align: center;
+
+  color: #000000;
+}
+
+.payment-amount {
+  position: absolute;
+  width: 162px;
+  height: 68px;
+  left: 125px;
+  top: 300px;
+
+  background: #DDE6E7;
+  border: 3px solid #B03852;
+  box-sizing: border-box;
+  border-radius: 16px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 41.6667px;
+  line-height: normal;
+  text-align: left;
+}
+
+
+.close-settler {
+  position: absolute;
+  width: 72px;
+  height: 30.12px;
+  left: 35px;
+  top: 420px;
+
+  background: #C4C4C4;
+  border: 3px solid #B03852;
+  box-sizing: border-box;
+  box-shadow: 0px 8.375px 8.375px rgba(0, 0, 0, 0.25);
+  border-radius: 20.9375px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17.1605px;
+  line-height: normal;
+  text-align: center;
+
+  color: #2C77A1;
+}
+
+.save-payment {
+
+  position: absolute;
+  width: 72px;
+  height: 30.12px;
+  left: 265px;
+  top: 420px;
+
+  background: #B03852;
+  border: 3px solid #B03852;
+  box-sizing: border-box;
+  box-shadow: 0px 8.375px 8.375px rgba(0, 0, 0, 0.25);
+  border-radius: 20.9375px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17.1605px;
+  line-height: normal;
+  text-align: center;
+
+  color: #C4C4C4;
+}

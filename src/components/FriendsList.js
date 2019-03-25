@@ -11,10 +11,11 @@ class FriendsList extends React.Component {
 
   componentDidMount = () => {
     this.get_friends()
+    console.log(this.state.friends)
   }
 
   get_friends = () => {
-    fetch('http://localhost:3000/users/5/friends', {
+    fetch('http://localhost:3000/users/1/friends', {
         method: 'GET',
         headers: {'Content-Type': "application.json",
 				  'Authorization': localStorage.token

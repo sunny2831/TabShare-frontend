@@ -5,7 +5,7 @@ import API from "../API"
 import UserIcon from '../images/UserIcon.png'
 import OwedUserIcon from '../images/OwedUserIcon.png'
 import AddTabModal from './Modals/AddTabModal'
-
+import SettleUpModal from './Modals/SettleUpModal'
 
 class MidSection extends React.Component {
 
@@ -117,9 +117,13 @@ class MidSection extends React.Component {
             className="modal"
             show={this.state.showAddTabModal}
             close={this.hideAddTabForm}>
-                Maybe aircrafts fly very high because they don't want to be seen in plane sight?
           </AddTabModal>
           <button className="settle-up-btn" onClick={this.showSettleUpForm}>Settle Up</button>
+          <SettleUpModal
+            className="modal"
+            showing={this.state.showSettleUpModal}
+            closing={this.hideSettleUpForm}>
+          </SettleUpModal>
           <h2 className="total-balance">total balance</h2>
           <h2 className="you-owe">you owe</h2>
           <h2 className="you-are-owed">you are owed</h2>
