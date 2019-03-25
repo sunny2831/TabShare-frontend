@@ -3,6 +3,8 @@ import React from 'react';
 import { withRouter, Route } from 'react-router-dom';
 import API from "../API"
 import UserIcon from '../images/UserIcon.png'
+import OwedUserIcon from '../images/OwedUserIcon.png'
+import AddTabModal from './Modals/AddTabModal'
 
 
 class MidSection extends React.Component {
@@ -10,7 +12,9 @@ class MidSection extends React.Component {
   state = ({
     allUsers: [],
     youAreOwedUsers: [],
-    usersYouOwe: []
+    usersYouOwe: [],
+    showAddTabModal: false,
+    showSettleUpModal: false
   })
   // const { currentUser, owedByTabs, owedToTabs } = this.props
   // getOtherUsers = () => {
@@ -21,6 +25,34 @@ class MidSection extends React.Component {
   //     this.getOwedByUser()
   //   }
   // }
+
+ // // LogoutBtnClick = () => (
+ // //    <Route render={({ history}) => (
+ // //      <button className='logout-btn' type="button" onClick={() => this.handleLogout}>Log out</button>
+ // //    )} />
+ // //  )
+
+  showAddTabForm = () => {
+    this.setState({showAddTabModal: true})
+  }
+
+  hideAddTabForm = () => {
+    this.setState({ showAddTabModal: false})
+  }
+
+  showSettleUpForm = () => {
+    this.setState({showSettleUpModal: true})
+  }
+
+  hideSettleUpForm = () => {
+    this.setState({ showSettleUpModal: false})
+  }
+
+  handleLogout = () => {
+    const { currentUser, logout } = this.props;
+    logout(currentUser)
+    this.props.history.push('/')
+  }
 
   componentDidMount= () => {
     this.getAllUsers()
@@ -80,26 +112,40 @@ class MidSection extends React.Component {
           <area className="vert-line1"></area>
           <area className="vert-line2"></area>
           <h1 className="title">Dashboard</h1>
-          <button className="add-tab-btn">Add A Tab</button>
-          <button className="settle-up-btn" onClick={this.onSettleUp}>Settle Up</button>
+          <button className="add-tab-btn" onClick={this.showAddTabForm}>Add A Tab</button>
+          <AddTabModal
+            className="modal"
+            show={this.state.showAddTabModal}
+            close={this.hideAddTabForm}>
+                Maybe aircrafts fly very high because they don't want to be seen in plane sight?
+          </AddTabModal>
+          <button className="settle-up-btn" onClick={this.showSettleUpForm}>Settle Up</button>
           <h2 className="total-balance">total balance</h2>
           <h2 className="you-owe">you owe</h2>
           <h2 className="you-are-owed">you are owed</h2>
             <h3 className="owing-divide">YOU OWE</h3>
-          <div className="you-owe-list">
+          <div className="you-owe-list" >
             {this.state.usersYouOwe.map(user => (
-               <button>
                  <div className='you-owe-list-div'>
                    <img className="user-icon" src={UserIcon}></img>
                    <div className="you-owe-info">
                      <div className="you-owe-list-name">{user.username}</div>
                    </div>
                  </div>
-               </button>
-             ))}
+               ))}
           </div>
-          <h3 className="owed-divide">YOU ARE OWED</h3>
           <area className="divide-rectangle"></area>
+          <h3 className="owed-divide">YOU ARE OWED</h3>
+          <div className="owed-list">
+            {this.state.youAreOwedUsers.map(user => (
+              <div className='owed-list-div'>
+                <img className="owed-user-icon" src={OwedUserIcon}></img>
+                <div className="owed-info">
+                  <div className="owed-list-name">{user.username}</div>
+                </div>
+              </div>
+            ))}
+          </div>
 
 
         </div>

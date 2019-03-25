@@ -11,15 +11,24 @@ import FriendsList from './FriendsList'
 
 class Dashboard extends React.Component {
 
+  state = { showModal: false }
+
   dashIcon = {
     imgurl: ProjectIcon
   }
- // LogoutBtnClick = () => (
- //    <Route render={({ history}) => (
- //      <button className='logout-btn' type="button" onClick={() => this.handleLogout}>Log out</button>
- //    )} />
- //  )
+ // // LogoutBtnClick = () => (
+ // //    <Route render={({ history}) => (
+ // //      <button className='logout-btn' type="button" onClick={() => this.handleLogout}>Log out</button>
+ // //    )} />
+ // //  )
 
+  showAddTabForm = () => {
+    this.setState({showModal: true})
+  }
+
+  hideAddTabForm = () => {
+    this.setState({ showModal: false})
+  }
 
   handleLogout = () => {
     const { currentUser, logout } = this.props;
@@ -40,7 +49,7 @@ class Dashboard extends React.Component {
           <h1 className="login-welcome">Welcome {currentUser.username} !</h1>
           <MidSection currentUser={currentUser} youOweUsers={youOweUsers} owedByTabs={owedByTabs} owedToTabs={owedToTabs} usersOweyou={usersOweYou} />
           <SideBar dashIcon={this.dashIcon.imgurl} />
-          <FriendsList currentUser={currentUser} />
+            <FriendsList currentUser={currentUser} />
         </main>
       </div>
     )
