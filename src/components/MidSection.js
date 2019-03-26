@@ -142,7 +142,7 @@ class MidSection extends React.Component {
              <div className="move-figures-up">
                {this.props.owedToTabs.map(tab => (
                  <div className="right-amount-div" key={tab.id}>
-                   <div className="yo-amount">you owe £{tab.initial_amount_owed}</div>
+                   <div className="yo-amount" onClick={this.showSettleUpForm}>you owe £{tab.initial_amount_owed}</div>
                  </div>
                ))}
              </div>
@@ -161,7 +161,7 @@ class MidSection extends React.Component {
             <div className="move-figures-up">
               {this.props.owedByTabs.map(tab => (
                 <div className="right-amount-div">
-                  <div className="yao-amount">owes you £{tab.initial_amount_owed}</div>
+                  <div className="yao-amount" onClick={this.showSettleUpForm}>owes you £{tab.initial_amount_owed}</div>
                 </div>))
             }
             </div>
