@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter, Route } from 'react-router-dom';
 import API from "../API"
 
 
@@ -22,7 +21,7 @@ class SignupForm extends React.Component {
 
   handleSignUpSubmit = event => {
      event.preventDefault()
-     const { login, logout, history } = this.props
+     const { login, history } = this.props
      const user = this.state
      API.create(user).then(data => {
        if (data.error) {
@@ -43,7 +42,7 @@ class SignupForm extends React.Component {
 
 
    render() {
-     const { classes } = this.props;
+     // const { classes } = this.props;
      const { username, email, password } = this.state
      const {handleSignUpSubmit, handleChange} = this
 

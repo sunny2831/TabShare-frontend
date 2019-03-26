@@ -1,6 +1,4 @@
 import React from 'react';
-import { withRouter, Route } from 'react-router-dom';
-import API from "../API"
 import FriendIcon from '../images/FriendIcon.png'
 
 class FriendsList extends React.Component {
@@ -29,14 +27,14 @@ class FriendsList extends React.Component {
 
 
   render() {
-    const { currentUser } = this.props
+    // const { currentUser } = this.props
     // console.log(this.state.friends);
     return(
       <div className="friends-list">
         {this.state.friends.length > 0 ?
           (this.state.friends.map(friend =>
-          <div>
-            <img className="friend-icon" src={FriendIcon}></img>
+          <div key={friend.id}>
+            <img className="friend-icon" src={FriendIcon} alt="friend pictures"></img>
             <div className="friend-name">
               <div>{friend.username}</div>
             </div>

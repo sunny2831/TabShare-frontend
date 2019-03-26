@@ -2,8 +2,7 @@
 import React, { Component } from 'react';
 import {
   withRouter,
-  Route,
-  Switch,
+  Route
 } from 'react-router-dom'
 // import logo from './logo.svg';
 import './App.css';
@@ -50,6 +49,7 @@ class App extends Component {
     componentDidMount() {
       // debugger
       API.validate().then(userData => {
+        // debugger
         if (userData.error) {
           this.logout();
         } else {
@@ -68,8 +68,9 @@ class App extends Component {
         'Authorization': localStorage.token}
       })
       .then(response => response.json())
+      // .then(resp => console.log("returned resp from fetch owed_to_tabs", resp))
       .then(tabs => {
-        if (tabs.error) return
+        // console.log(tabs)
         this.setState({owed_to_tabs: tabs})
       })
     }
@@ -77,7 +78,6 @@ class App extends Component {
 
 
     getOwedByTabs = () => {
-      console.log('getOwedByTabs token:', localStorage.token)
       fetch(`http://localhost:3000/owed_by_tabs`, {
         method: 'GET',
         headers: {'Content-Type': "application/json",
@@ -85,7 +85,6 @@ class App extends Component {
       })
       .then(response => response.json())
       .then(tabs => {
-        if (tabs.error) return
         this.setState({owed_to_tabs: tabs})
       })
     }

@@ -1,5 +1,4 @@
 import React from 'react';
-import Home from './Home'
 import LoginBackground from '../images/LoginBackground.png'
 import { Route } from 'react-router-dom';
 import API from "../API"

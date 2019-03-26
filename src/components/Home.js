@@ -15,7 +15,6 @@ const LoginBtnClick = () => (
 )
 
 const Home = props => {
-  const { classes } = props
 
 
     return (

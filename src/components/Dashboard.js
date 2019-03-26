@@ -1,6 +1,4 @@
 import React from 'react'
-import { Route } from 'react-router-dom';
-import API from '../API'
 import '../App.css';
 import TabShareLogo from '../images/TabShareLogo.png'
 import MidSection from './MidSection'
@@ -51,8 +49,8 @@ class Dashboard extends React.Component {
             <button className='logout-btn' type="button" onClick={this.handleLogout}>Log out</button>
           </div>
           <h1 className="login-welcome">Welcome {currentUser.username} !</h1>
-          <MidSection currentUser={currentUser} youOweUsers={youOweUsers} owedByTabs={owedByTabs} owedToTabs={owedToTabs} usersOweyou={usersOweYou} />
-          <SideBar dashIcon={this.dashIcon.imgurl} />
+            <MidSection currentUser={currentUser} youOweUsers={youOweUsers} owedByTabs={owedByTabs} owedToTabs={owedToTabs} usersOweyou={usersOweYou} />
+            <SideBar dashIcon={this.dashIcon.imgurl} />
             <FriendsList currentUser={currentUser} />
         </main>
       </div>

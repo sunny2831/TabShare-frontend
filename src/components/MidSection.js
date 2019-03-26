@@ -1,7 +1,5 @@
 // import React, { Component } from 'react';
 import React from 'react';
-import { withRouter, Route } from 'react-router-dom';
-import API from "../API"
 import UserIcon from '../images/UserIcon.png'
 import OwedUserIcon from '../images/OwedUserIcon.png'
 import AddTabModal from './Modals/AddTabModal'
@@ -107,14 +105,14 @@ class MidSection extends React.Component {
   }
 
    render() {
-     const { currentUser, youOweUsers, usersOweYou, owedByTabs, owedToTabs} = this.props
+     // const { currentUser, youOweUsers, usersOweYou, owedByTabs, owedToTabs} = this.props
 
       return(
       <div className="dash-panel">
         <div className="dark-panel">
-          <area className="hoz-line"></area>
-          <area className="vert-line1"></area>
-          <area className="vert-line2"></area>
+          <area className="hoz-line" alt="lines for midsection"></area>
+          <area className="vert-line1" alt="lines for midsection"></area>
+          <area className="vert-line2" alt="lines for midsection"></area>
             <h1 className="title">Dashboard</h1>
           <button className="add-tab-btn" onClick={this.showAddTabForm}>Add A Tab</button>
           <AddTabModal
@@ -134,48 +132,38 @@ class MidSection extends React.Component {
             <h3 className="owing-divide">YOU OWE</h3>
           <div className="you-owe-list" >
             {this.state.usersYouOwe.map(user => (
-                 <div className='you-owe-list-div'>
-                   <img className="user-icon" src={UserIcon}></img>
+                 <div className='you-owe-list-div' key={user.id}>
+                   <img className="user-icon" src={UserIcon} alt="user icon"></img>
                    <div className="you-owe-info">
                      <div className="you-owe-list-name">{user.username}</div>
                    </div>
                  </div>
              ))}
              <div className="move-figures-up">
-               {this.props.owedToTabs ?
-                 this.props.owedToTabs.map(tab => (
-                 <div className="right-amount-div">
+               {this.props.owedToTabs.map(tab => (
+                 <div className="right-amount-div" key={tab.id}>
                    <div className="yo-amount">you owe £{tab.initial_amount_owed}</div>
                  </div>
-               ))
-             :
-             (<div className="right-amount-div">
-              <div className="yo-amount">you don't owe anything!</div>
-             </div>)}
+               ))}
              </div>
           </div>
-          <area className="divide-rectangle"></area>
+          <area className="divide-rectangle" alt="you are owed area"></area>
           <h3 className="owed-divide">YOU ARE OWED</h3>
           <div className="owed-list">
             {this.state.youAreOwedUsers.map(user => (
               <div className='owed-list-div'>
-                <img className="owed-user-icon" src={OwedUserIcon}></img>
+                <img className="owed-user-icon" src={OwedUserIcon} alt="owed user area"></img>
                 <div className="owed-info">
                   <div className="owed-list-name">{user.username}</div>
                 </div>
               </div>
             ))}
             <div className="move-figures-up">
-              { this.props.owedByTabs ?
-                this.props.owedByTabs.map(tab => (
+              {this.props.owedByTabs.map(tab => (
                 <div className="right-amount-div">
                   <div className="yao-amount">owes you £{tab.initial_amount_owed}</div>
                 </div>))
-                :
-                (<div className="right-amount-div">
-                  <div className="yao-amount">you aren't owed anything!</div>
-                </div>)
-              }
+            }
             </div>
           </div>
 
