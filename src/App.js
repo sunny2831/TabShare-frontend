@@ -39,7 +39,7 @@ class App extends Component {
 
     logout = () => {
       localStorage.removeItem("token");
-      this.setState({ currentUser: "" });
+      this.setState({ currentUser: ""});
       this.setState({owed_by_tabs: []})
       this.setState({owed_to_tabs: []})
       this.setState({usersOweYou: []})
@@ -69,6 +69,7 @@ class App extends Component {
       })
       .then(response => response.json())
       .then(tabs => {
+        if (tabs.error) return
         this.setState({owed_to_tabs: tabs})
       })
     }
@@ -76,6 +77,7 @@ class App extends Component {
 
 
     getOwedByTabs = () => {
+      console.log('getOwedByTabs token:', localStorage.token)
       fetch(`http://localhost:3000/owed_by_tabs`, {
         method: 'GET',
         headers: {'Content-Type': "application/json",
@@ -83,7 +85,8 @@ class App extends Component {
       })
       .then(response => response.json())
       .then(tabs => {
-        this.setState({owed_by_tabs: tabs})
+        if (tabs.error) return
+        this.setState({owed_to_tabs: tabs})
       })
     }
 
