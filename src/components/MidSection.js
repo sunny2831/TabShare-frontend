@@ -53,11 +53,12 @@ class MidSection extends React.Component {
     this.props.history.push('/')
   }
 
-  componentDidMount= () => {
-    this.getAllUsers()
-  }
+  // componentDidMount= () => {
+  //   this.getAllUsers()
+  // }
 
-  getAllUsers = () => {
+  componentDidMount = () => {
+    // console.log('i mounted')
       fetch('http://localhost:3000/users', {
         method: 'GET',
         headers: {'Content-Type': "application.json",
@@ -66,6 +67,7 @@ class MidSection extends React.Component {
       .then(resp => resp.json())
       .then(data => {
         // debugger
+        // console.log(data)
         this.setState({ allUsers: data }, () => {
           this.getOwedToUser()
           this.getOwedByUser()
@@ -76,6 +78,7 @@ class MidSection extends React.Component {
   getOwedToUser = () => {
     let owedToIds = this.props.owedByTabs.map(tab => tab.owed_to_user_id)
     let matchedUser = []
+
         owedToIds.forEach((id) => {
           let match
           match = this.state.allUsers.find(user => user.id === id)
@@ -88,10 +91,7 @@ class MidSection extends React.Component {
     }
 
   getOwedByUser = () => {
-
     let owedByIds = this.props.owedToTabs.map(tab => tab.owed_by_user_id)
-
-
     let matchedUser = []
 
       owedByIds.forEach((id) => {

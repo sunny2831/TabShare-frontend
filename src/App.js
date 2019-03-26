@@ -27,7 +27,6 @@ class App extends Component {
       }
   }
 
-
     login = user => {
       localStorage.setItem("token", user.token);
       this.setState({ currentUser: user },() => {
@@ -47,6 +46,7 @@ class App extends Component {
 
 
     componentDidMount() {
+      // console.log("app has mounted")
       // debugger
       API.validate().then(userData => {
         // debugger
@@ -70,7 +70,7 @@ class App extends Component {
       .then(response => response.json())
       // .then(resp => console.log("returned resp from fetch owed_to_tabs", resp))
       .then(tabs => {
-        // console.log(tabs)
+        console.log(tabs)
         this.setState({owed_to_tabs: tabs})
       })
     }
@@ -85,7 +85,7 @@ class App extends Component {
       })
       .then(response => response.json())
       .then(tabs => {
-        this.setState({owed_to_tabs: tabs})
+        this.setState({owed_by_tabs: tabs})
       })
     }
 
