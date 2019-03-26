@@ -76,7 +76,6 @@ class App extends Component {
 
 
     getOwedByTabs = () => {
-      let  owedToIds
       fetch(`http://localhost:3000/owed_by_tabs`, {
         method: 'GET',
         headers: {'Content-Type': "application/json",
@@ -114,7 +113,7 @@ class App extends Component {
       return (
         <div className="App">
               <Route exact path="/" component= {routerProps => (
-                  <Home login={this.login}{...routerProps}/>
+                  <Home login={this.login} logout={this.logout} {...routerProps}/>
                 )} />
               <Route exact path="/log-in" component={routerProps => (
                 <LoginForm login={this.login} {...routerProps} />

@@ -22,6 +22,10 @@ class Dashboard extends React.Component {
  // //    )} />
  // //  )
 
+ componentDidMount() {
+   // debugger
+ }
+
   showAddTabForm = () => {
     this.setState({showModal: true})
   }

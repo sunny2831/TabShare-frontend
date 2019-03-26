@@ -15,16 +15,22 @@ class SignupForm extends React.Component {
       this.setState({[event.target.name]: event.target.value})
   }
 
+  // componentDidMount = () => {
+  //   this.handleSignUpSubmit()
+  // }
+
 
   handleSignUpSubmit = event => {
      event.preventDefault()
-     const { login, history } = this.props
+     const { login, logout, history } = this.props
      const user = this.state
      API.create(user).then(data => {
        if (data.error) {
          alert('Email or Username already in use')
        } else {
+         // debugger
          login(data)
+         // logout(data)
          history.push("/dashboard")
        }
      })

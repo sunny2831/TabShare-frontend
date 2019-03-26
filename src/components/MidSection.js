@@ -16,6 +16,7 @@ class MidSection extends React.Component {
     showAddTabModal: false,
     showSettleUpModal: false
   })
+
   // const { currentUser, owedByTabs, owedToTabs } = this.props
   // getOtherUsers = () => {
   //   const { owedByTabs, owedToTabs } = this.props
@@ -63,12 +64,15 @@ class MidSection extends React.Component {
         method: 'GET',
         headers: {'Content-Type': "application.json",
                   'Authorization': localStorage.token}
-      }).then(resp => resp.json()).then(
-        data => this.setState({ allUsers: data }, () => {
+      })
+      .then(resp => resp.json())
+      .then(data => {
+        // debugger
+        this.setState({ allUsers: data }, () => {
           this.getOwedToUser()
           this.getOwedByUser()
         })
-      )
+      })
   }
 
   getOwedToUser = () => {
@@ -111,7 +115,7 @@ class MidSection extends React.Component {
           <area className="hoz-line"></area>
           <area className="vert-line1"></area>
           <area className="vert-line2"></area>
-          <h1 className="title">Dashboard</h1>
+            <h1 className="title">Dashboard</h1>
           <button className="add-tab-btn" onClick={this.showAddTabForm}>Add A Tab</button>
           <AddTabModal
             className="modal"
@@ -136,7 +140,19 @@ class MidSection extends React.Component {
                      <div className="you-owe-list-name">{user.username}</div>
                    </div>
                  </div>
-               ))}
+             ))}
+             <div className="move-figures-up">
+               {this.props.owedToTabs ?
+                 this.props.owedToTabs.map(tab => (
+                 <div className="right-amount-div">
+                   <div className="yo-amount">you owe £{tab.initial_amount_owed}</div>
+                 </div>
+               ))
+             :
+             (<div className="right-amount-div">
+              <div className="yo-amount">you don't owe anything!</div>
+             </div>)}
+             </div>
           </div>
           <area className="divide-rectangle"></area>
           <h3 className="owed-divide">YOU ARE OWED</h3>
@@ -149,6 +165,18 @@ class MidSection extends React.Component {
                 </div>
               </div>
             ))}
+            <div className="move-figures-up">
+              { this.props.owedByTabs ?
+                this.props.owedByTabs.map(tab => (
+                <div className="right-amount-div">
+                  <div className="yao-amount">owes you £{tab.initial_amount_owed}</div>
+                </div>))
+                :
+                (<div className="right-amount-div">
+                  <div className="yao-amount">you aren't owed anything!</div>
+                </div>)
+              }
+            </div>
           </div>
 
 
