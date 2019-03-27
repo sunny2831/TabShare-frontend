@@ -163,9 +163,9 @@ color: #000000;
 
 .enter-paid-by {
   position: absolute;
-  width: 180px;
-  height: 36px;
-  left: 150px;
+  width: 267px;
+  height: 35px;
+  left: 63px;
   top: 310px;
 
   background: #DDE6E7;
@@ -182,9 +182,9 @@ color: #000000;
 
 .enter-amount-owed {
   position: absolute;
-  width: 180px;
-  height: 36px;
-  left: 150px;
+  width: 267px;
+  height: 35px;
+  left: 63px;
   top: 365px;
 
   background: #DDE6E7;

@@ -35,6 +35,55 @@ class MidSection extends React.Component {
     this.setState({showAddTabModal: true})
   }
 
+  // handleAddTabSubmit = (event) => {
+  //  console.log(event)
+  // }
+
+
+
+  addTabOnSave = (event) => {
+
+    event.preventDefault()
+    // console.log(event.target.username.value)
+    let owed_to_user = event.target.owed_to_user.value
+    let owed_by_user = event.target.owed_by_user.value
+    let description = event.target.description.value
+    let tab_total = parseFloat(event.target.tab_total.value)
+    let amount_owed = parseFloat(event.target.amount_owed.value)
+
+    const toMatchUser = this.state.allUsers.filter(user => user.username === owed_to_user)
+    const toUserId = toMatchUser.map(user => user.id)[0]
+    // console.log(toUserId)
+
+    const byMatchUser = this.state.allUsers.filter(user => user.username === owed_by_user)
+    const byUserId = byMatchUser.map(user => user.id)[0]
+    // console.log(byUserId)
+
+
+    fetch("http://localhost:3000/tabs", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": localStorage.token
+      },
+      body: JSON.stringify({
+        tab_total: tab_total,
+        initial_amount_owed: amount_owed,
+        owed_by_user_id: byUserId,
+        owed_to_user_id: toUserId,
+        description: description
+      })
+    }).then(response => response.json())
+      .then(data => {
+        if (data.owed_by_user_id === this.props.currentUser.id) {
+             this.props.addOweByTab(data)
+              // console.log("I would have done something with it")
+        } else if (data.owed_to_user_id === this.props.currentUser.id) {
+            this.props.addOweToTab(data)
+        }
+      })
+  }
+
   hideAddTabForm = () => {
     this.setState({ showAddTabModal: false})
   }
@@ -117,6 +166,8 @@ class MidSection extends React.Component {
           <button className="add-tab-btn" onClick={this.showAddTabForm}>Add A Tab</button>
           <AddTabModal
             className="modal"
+            addTabOnSave={this.addTabOnSave}
+            allUsers={this.state.allUsers}
             show={this.state.showAddTabModal}
             close={this.hideAddTabForm}>
           </AddTabModal>

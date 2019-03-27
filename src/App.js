@@ -70,7 +70,6 @@ class App extends Component {
       .then(response => response.json())
       // .then(resp => console.log("returned resp from fetch owed_to_tabs", resp))
       .then(tabs => {
-        console.log(tabs)
         this.setState({owed_to_tabs: tabs})
       })
     }
@@ -111,6 +110,16 @@ class App extends Component {
     //   .then(tabs => this.setState({owed_to_tabs: tabs}))
     // }
 
+    addOweToTab = newTab => {
+      console.log("TICK")
+      this.setState({ owed_to_tabs: [...this.state.owed_to_tabs, newTab]})
+    }
+
+    addOweByTab = newTab => {
+      console.log("TICK")
+      this.setState({ owed_by_tabs: [...this.state.owed_by_tabs, newTab]})
+    }
+
     render() {
       return (
         <div className="App">
@@ -121,7 +130,7 @@ class App extends Component {
                 <LoginForm login={this.login} {...routerProps} />
               )}/>
             <Route exact path="/dashboard" component={routerProps => (
-                <Dashboard logout={this.logout} currentUser={this.state.currentUser} youOweUsers={this.getOwedByUser} usersOweYou={this.getOwedToUser}
+                <Dashboard addOweToTab={this.addOweToTab} addOweByTab={this.addOweByTab} logout={this.logout} currentUser={this.state.currentUser} youOweUsers={this.getOwedByUser} usersOweYou={this.getOwedToUser}
                    owedToTabs={this.state.owed_to_tabs} owedByTabs={this.state.owed_by_tabs} {...routerProps} />
               )}/>
         </div>

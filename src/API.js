@@ -19,6 +19,16 @@ class API {
     }).then(response => response.json());
   }
 
+  // static create(tab) {
+  //   return fetch("http://localhost:3000/tabs", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify(tab)
+  //   }).then(response => response.json())
+  // }
+
   static validate() {
     return this.get("http://localhost:3000/validate");
   }

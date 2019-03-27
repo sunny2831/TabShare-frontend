@@ -13,7 +13,7 @@ class FriendsList extends React.Component {
   }
 
   get_friends = () => {
-    fetch('http://localhost:3000/users/1/friends', {
+    fetch('http://localhost:3000/users', {
         method: 'GET',
         headers: {'Content-Type': "application.json",
 				  'Authorization': localStorage.token
