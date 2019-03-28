@@ -774,3 +774,51 @@ color: #C4C4C4;
 
   color: #B03852
 }
+
+.you-are-owed-fig {
+  position: absolute;
+  width: 122.19px;
+  height: 40.31px;
+  left: 530px;
+  top: 95px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26.6707px;
+  line-height: normal;
+
+  color: #2C77A1;
+}
+
+.you-owe-fig {
+  position: absolute;
+  width: 122.19px;
+  height: 40.31px;
+  left: 280px;
+  top: 95px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26.6707px;
+  line-height: normal;
+
+  color: #B03852;
+}
+
+.total-balance-fig {
+  position: absolute;
+  width: 109px;
+  height: 40px;
+  left: 50px;
+  top: 95px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 26.6707px;
+  line-height: normal;
+
+  color: #000000;
+}

@@ -75,12 +75,14 @@ class MidSection extends React.Component {
                     tab.owed_to_user_id === byUserId &&
                     tab.initial_amount_owed === amount_owed
                     })
-                    this.props.updateDeleteTab(foundTab.id)
-                    return fetch(`http://localhost:3000/tabs/${foundTab.id}`,{
-                      method: 'DELETE',
-                      headers: {'Content-Type': "application/json",
-                                'Authorization': localStorage.token }
-                    })
+                    if (foundTab)
+                      {this.props.updateDeleteTab(foundTab.id)
+                      return fetch(`http://localhost:3000/tabs/${foundTab.id}`,{
+                        method: 'DELETE',
+                        headers: {'Content-Type': "application/json",
+                                  'Authorization': localStorage.token }
+                      })}
+                    else {alert("Tab does not exist")}
 
               }
             )
@@ -180,6 +182,16 @@ class MidSection extends React.Component {
           this.getOwedByUser()
         })
       })
+     let youOwe = 0
+     let youAreOwed = 0
+     if (this.props.owedToTabs.length) {
+       youOwe = this.youOweTotal()
+     }
+     if (this.props.owedByTabs.length) {
+       youAreOwed = this.youAreOwedTotal()
+     }
+     return this.totalBalance(youOwe, youAreOwed)
+
   }
 
   getOwedToUser = () => {
@@ -214,10 +226,26 @@ class MidSection extends React.Component {
 
   youAreOwedTotal = () => {
     let totalArray = this.props.owedByTabs.map(tab => tab.initial_amount_owed)
-    debugger
+    // debugger
     let total = totalArray.reduce((a,b) => {return a+b})
-    console.log(Math.round(total * 100)/100)
+    let youAreOwed = Math.round((total * 100)/100)
+    this.setState({youAreOwedTotal: youAreOwed})
+    return youAreOwed
   }
+
+  youOweTotal = () => {
+    let totalArray = this.props.owedToTabs.map(tab => tab.initial_amount_owed)
+    // debugger
+    let total = totalArray.reduce((a,b) => {return a+b})
+    let youOwe = Math.round((total * 100)/100)
+    this.setState({youOweTotal: youOwe})
+    return youOwe
+  }
+
+  totalBalance = (youOwe, youAreOwed) => {
+    this.setState({ totalBalance: youAreOwed - youOwe})
+  }
+
 
    render() {
      // const { currentUser, youOweUsers, usersOweYou, owedByTabs, owedToTabs} = this.props
@@ -245,10 +273,13 @@ class MidSection extends React.Component {
             closing={this.hideSettleUpForm}>
           </SettleUpModal>
           <h2 className="total-balance">total balance</h2>
+          <h2 className="total-balance-fig">£{this.state.totalBalance}</h2>
           <h2 className="you-owe">you owe</h2>
+          <h2 className="you-owe-fig">£{this.state.youOweTotal}</h2>
           <h2 className="you-are-owed">you are owed</h2>
+          <h2 className="you-are-owed-fig">£{this.state.youAreOwedTotal}</h2>
             <h3 className="owing-divide">YOU OWE</h3>
-          <div className="you-owe-list" >
+          <div className="you-owe-list">
             {this.state.usersYouOwe.map(user => (
                  <div className='you-owe-list-div' key={user.id}>
                    <img className="user-icon" src={UserIcon} alt="user icon"></img>
