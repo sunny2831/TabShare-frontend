@@ -13,14 +13,14 @@ const SettleUpModal = (props) => {
           <div className="settle-box">
             <div className="settle-header">
                 <h1 className="settle-up">Settle Up</h1>
-                <form>
-                  <input type="text" placeholder="from username" className="from-username" required></input>
+                <form onSubmit={props.removeTabSettle}>
+                  <input type="text" name="owed_by_user" placeholder="from username" className="from-username" required></input>
                   <label htmlFor="paid" className="paid-label">paid</label>
-                  <input type="text" placeholder="to username" className="to-username" required></input>
+                  <input type="text" name="owed_to_user" placeholder="to username" className="to-username" required></input>
                   <label htmlFor="smount" className="sterling-sign">£</label>
-                  <input type="text" placeholder="0.00" className="payment-amount" required></input>
+                  <input type="text" name="amount_owed" placeholder="0.00" className="payment-amount" required></input>
                   <button className="close-settler" type="button" onClick={props.closing}>close</button>
-                  <button className="save-payment" type="button">Save</button>
+                  <button className="save-payment" type="submit">Save</button>
                 </form>
             </div>
           </div>

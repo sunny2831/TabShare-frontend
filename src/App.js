@@ -111,13 +111,21 @@ class App extends Component {
     // }
 
     addOweToTab = newTab => {
-      console.log("TICK")
+      // console.log("TICK")
       this.setState({ owed_to_tabs: [...this.state.owed_to_tabs, newTab]})
     }
 
     addOweByTab = newTab => {
-      console.log("TICK")
+      // console.log("TICK")
       this.setState({ owed_by_tabs: [...this.state.owed_by_tabs, newTab]})
+    }
+
+
+    updateDeleteTab = (tabId) => {
+      let result = this.state.owed_by_tabs.find(tab => tab.id === tabId) || this.state.owed_to_tabs.find(tab => tab.id === tabId)
+      this.setState({ owed_by_tabs: this.state.owed_by_tabs.filter(tab => tab.id !== result.id),
+                      owed_to_tabs: this.state.owed_to_tabs.filter(tab => tab.id !== result.id)
+                    })
     }
 
     render() {
@@ -130,7 +138,7 @@ class App extends Component {
                 <LoginForm login={this.login} {...routerProps} />
               )}/>
             <Route exact path="/dashboard" component={routerProps => (
-                <Dashboard addOweToTab={this.addOweToTab} addOweByTab={this.addOweByTab} logout={this.logout} currentUser={this.state.currentUser} youOweUsers={this.getOwedByUser} usersOweYou={this.getOwedToUser}
+                <Dashboard addOweToTab={this.addOweToTab} addOweByTab={this.addOweByTab} updateDeleteTab={this.updateDeleteTab} logout={this.logout} currentUser={this.state.currentUser} youOweUsers={this.getOwedByUser} usersOweYou={this.getOwedToUser}
                    owedToTabs={this.state.owed_to_tabs} owedByTabs={this.state.owed_by_tabs} {...routerProps} />
               )}/>
         </div>

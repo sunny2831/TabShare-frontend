@@ -58,7 +58,7 @@
   position: absolute;
   width: 37px;
   height: 53.44px;
-  left: 62px;
+  left: 72px;
   top: 227px;
 
   font-family: Tahoma;
@@ -182,9 +182,9 @@ color: #000000;
 
 .enter-amount-owed {
   position: absolute;
-  width: 267px;
+  width: 212px;
   height: 35px;
-  left: 63px;
+  left: 119px;
   top: 365px;
 
   background: #DDE6E7;
@@ -243,4 +243,20 @@ color: #000000;
   text-align: center;
 
   color: #C4C4C4;
+}
+
+.pound-sign2 {
+  position: absolute;
+  width: 37px;
+  height: 53.44px;
+  left: 90px;
+  top: 365px;
+
+  font-family: Tahoma;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35.4148px;
+  line-height: normal;
+
+  color: #000000;
 }

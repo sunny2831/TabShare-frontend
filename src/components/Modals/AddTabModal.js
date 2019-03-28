@@ -22,7 +22,8 @@ const AddTabModal = (props) => {
                           <label htmlFor="total" className="pound-sign">£</label>
                           <input type="text" name="tab_total" placeholder="Tab Total" className="enter-total" required></input>
                           <input type="text" name="description" placeholder="Description" className="enter-paid-by" required></input>
-                          <input type="text" name="amount_owed" placeholder="£ Amount Owed" className="enter-amount-owed" required></input>
+                          <label htmlFor="total" className="pound-sign2">£</label>
+                          <input type="text" name="amount_owed" placeholder="Amount Owed" className="enter-amount-owed" required></input>
                           <button className="close-modal" type="button" onClick={props.close}>close</button>
                           <button className="save-btn" type="submit" >Save</button>
 
