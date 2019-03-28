@@ -49,7 +49,7 @@ class Dashboard extends React.Component {
             <button className='logout-btn' type="button" onClick={this.handleLogout}>Log out</button>
           </div>
           <h1 className="login-welcome">Welcome {currentUser.username} !</h1>
-            <MidSection addOweToTab={this.props.addOweToTab} addOweByTab={this.props.addOweByTab} currentUser={currentUser} youOweUsers={youOweUsers} owedByTabs={owedByTabs} owedToTabs={owedToTabs} usersOweyou={usersOweYou} />
+            <MidSection addOweToTab={this.props.addOweToTab} addOweByTab={this.props.addOweByTab} updateDeleteTab={this.props.updateDeleteTab} currentUser={currentUser} youOweUsers={youOweUsers} owedByTabs={owedByTabs} owedToTabs={owedToTabs} usersOweyou={usersOweYou} />
             <SideBar dashIcon={this.dashIcon.imgurl} />
             <FriendsList currentUser={currentUser} />
         </main>

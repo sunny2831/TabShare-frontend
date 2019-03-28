@@ -12,7 +12,10 @@ class MidSection extends React.Component {
     youAreOwedUsers: [],
     usersYouOwe: [],
     showAddTabModal: false,
-    showSettleUpModal: false
+    showSettleUpModal: false,
+    youAreOwedTotal: 0,
+    youOweTotal: 0,
+    totalBalance: 0
   })
 
   // const { currentUser, owedByTabs, owedToTabs } = this.props
@@ -38,6 +41,61 @@ class MidSection extends React.Component {
   // handleAddTabSubmit = (event) => {
   //  console.log(event)
   // }
+
+  removeTabSettle = (event) => {
+    event.preventDefault()
+    let owed_to_user = event.target.owed_to_user.value
+    let owed_by_user = event.target.owed_by_user.value
+    let amount_owed = parseInt(event.target.amount_owed.value)
+
+    const matchToUser = this.state.allUsers.filter(user => user.username === owed_to_user)
+    const toUserId = matchToUser.map(user => user.id)[0]
+
+    const matchByUser = this.state.allUsers.filter(user => user.username === owed_by_user)
+    const byUserId = matchByUser.map(user => user.id)[0]
+
+    console.log(toUserId)
+    console.log(byUserId)
+    console.log(amount_owed)
+
+    let foundTab
+
+    fetch(`http://localhost:3000/tabs`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": localStorage.token
+      }
+    })
+    .then(resp => resp.json())
+	  .then(data => {
+                 foundTab = data.find(tab => {
+                    return tab.owed_by_user_id === toUserId  &&
+
+                    tab.owed_to_user_id === byUserId &&
+                    tab.initial_amount_owed === amount_owed
+                    })
+                    this.props.updateDeleteTab(foundTab.id)
+                    return fetch(`http://localhost:3000/tabs/${foundTab.id}`,{
+                      method: 'DELETE',
+                      headers: {'Content-Type': "application/json",
+                                'Authorization': localStorage.token }
+                    })
+
+              }
+            )
+ }
+
+ // findTab = (data) => {
+ //
+ //
+ //
+ // }
+
+
+
+
+
 
 
 
@@ -137,6 +195,7 @@ class MidSection extends React.Component {
         this.setState({
           youAreOwedUsers: matchedUser
         })
+
     }
 
   getOwedByUser = () => {
@@ -151,6 +210,13 @@ class MidSection extends React.Component {
       this.setState({
         usersYouOwe: matchedUser
       })
+  }
+
+  youAreOwedTotal = () => {
+    let totalArray = this.props.owedByTabs.map(tab => tab.initial_amount_owed)
+    debugger
+    let total = totalArray.reduce((a,b) => {return a+b})
+    console.log(Math.round(total * 100)/100)
   }
 
    render() {
@@ -174,6 +240,7 @@ class MidSection extends React.Component {
           <button className="settle-up-btn" onClick={this.showSettleUpForm}>Settle Up</button>
           <SettleUpModal
             className="modal"
+            removeTabSettle={this.removeTabSettle}
             showing={this.state.showSettleUpModal}
             closing={this.hideSettleUpForm}>
           </SettleUpModal>
