@@ -54,10 +54,6 @@ class MidSection extends React.Component {
     const matchByUser = this.state.allUsers.filter(user => user.username === owed_by_user)
     const byUserId = matchByUser.map(user => user.id)[0]
 
-    console.log(toUserId)
-    console.log(byUserId)
-    console.log(amount_owed)
-
     let foundTab
 
     fetch(`http://localhost:3000/tabs`, {
@@ -228,7 +224,8 @@ class MidSection extends React.Component {
     let totalArray = this.props.owedByTabs.map(tab => tab.initial_amount_owed)
     // debugger
     let total = totalArray.reduce((a,b) => {return a+b})
-    let youAreOwed = Math.round((total * 100)/100)
+    let youAreOwed = total
+    // Math.round((total * 100)/100)
     this.setState({youAreOwedTotal: youAreOwed})
     return youAreOwed
   }
@@ -237,7 +234,8 @@ class MidSection extends React.Component {
     let totalArray = this.props.owedToTabs.map(tab => tab.initial_amount_owed)
     // debugger
     let total = totalArray.reduce((a,b) => {return a+b})
-    let youOwe = Math.round((total * 100)/100)
+    let youOwe = total
+    // Math.round((total * 100)/100)
     this.setState({youOweTotal: youOwe})
     return youOwe
   }
